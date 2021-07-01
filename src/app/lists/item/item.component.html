@@ -1,0 +1,21 @@
+<mat-card class="item-card">
+    <mat-card-header>
+        <mat-card-title class="line-clamp">{{item.title}}</mat-card-title>
+        <mat-card-subtitle class="line-clamp line-1">{{item.product_type}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="hoverZoom">
+        <figure>
+            <img mat-card-image [src]="item.image_link" alt="Photo of a {{item.title}}">
+        </figure>
+    </div>
+    <mat-card-content>
+        <mat-chip-list aria-label="item -details">
+            <mat-chip class="new" [class.hidden]="(item.condition | lowercase) !== 'new'">New</mat-chip>
+            <mat-chip class="stock" [class.hidden]="(item.availability | lowercase) !== 'in stock'">In stock</mat-chip>
+
+        </mat-chip-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <h1>₹{{item.price}}</h1>
+    </mat-card-actions>
+</mat-card>

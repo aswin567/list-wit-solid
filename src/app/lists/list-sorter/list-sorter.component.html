@@ -1,0 +1,7 @@
+<button mat-button color="primary" (click)="onSortByPrice()" > Sort By Price
+    <mat-icon aria-hidden="false" aria-label="trend_icon" [class.trendDown]="sortByPrice.trend==='down'" [class.hidden]="!sortByPrice.isActive">arrow_upward</mat-icon>
+</button>
+<button mat-button color="primary" (click)="onSortByBrand()" > Sort By Brand
+
+    <mat-icon aria-hidden="false" aria-label="trend_icon" [class.trendDown]="sortByBrand.trend==='down'" [class.hidden]="!sortByBrand.isActive">arrow_upward</mat-icon>
+</button>

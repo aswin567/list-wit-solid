@@ -1,0 +1,39 @@
+.container {
+    height: calc(100% - 64px);
+    .header {
+        .header-content {
+            width: 100%;
+            background: #d3dbe6;
+            h1 {
+                font-family: "Exo 2", sans-serif;
+                margin: 0;
+            }
+            h3 {
+                visibility: hidden;
+
+                transition: all ease-in-out 0.3s;
+                margin: 0;
+                span {
+                    color: #71a2a2;
+                    font-weight: 600;
+                }
+            }
+            .showSlow {
+                visibility: visible;
+            }
+        }
+
+        .filters {
+            margin: 0 30px;
+            width: calc(100% - 60px)
+        }
+    }
+    .content {
+        height: calc(100% - 184px);
+    }
+}
+.example-viewport {
+    height: 100%;
+    width: 100%;
+    background: #eee;
+}

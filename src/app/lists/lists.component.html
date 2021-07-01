@@ -1,0 +1,26 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="header" fxLayout="column" fxLayoutAlign="center center" fxFlex="15">
+        <div class="header-content" fxLayout="column" fxLayoutAlign="center center" fxFlex="45">
+            <h1 class="mat-display-1">Computer Peripherals</h1>
+            <h3 [class.showSlow]="lists.length > 0" class="transactionSlow">There are <span>{{lists.length}}</span> items in the list.</h3>
+        </div>
+        <div class="sorting" fxFlex="25">
+            <app-list-sorter (onSort)="sortList($event)"></app-list-sorter>
+        </div>
+
+        <div class="filters" fxFlex="30" fxFlexAlign="start"><app-list-filter [minLimit]="minPrice?minPrice: 0" [maxLimit]="maxPrice"></app-list-filter></div>
+    </div>
+    <div class="content" fxLayout="row" fxLayoutAlign="start stretch">
+
+        <div class="list-content" fxFlex>
+
+            <cdk-virtual-scroll-viewport class="example-viewport" itemSize="10" maxBufferPx="1000" minBufferPx="700">
+                <dl class="example-dl" fxLayout="row wrap" fxLayoutAlign="space-around center">
+                    <ng-container *cdkVirtualFor="let item of lists ">
+                        <app-item [item]="item"></app-item>
+                    </ng-container>
+                </dl>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+</div>

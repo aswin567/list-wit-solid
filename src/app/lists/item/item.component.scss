@@ -1,0 +1,39 @@
+.item-card {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px;
+    .mat-card-header{
+        display: block;
+    }
+    .mat-card-image {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 20px;
+      }
+      .new{
+          background: #24c6f7;
+      }
+      .stock{
+        background: #77c148;
+      }
+      .mat-card-actions{
+          margin: 0;
+      }
+  }
+
+
+/* Zoom In #2 */
+.hoverZoom{
+    overflow: hidden;
+    position: relative;
+}
+.hoverZoom figure img {
+	height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hoverZoom figure:hover img {
+    transform: scale(1.5);
+}
+  

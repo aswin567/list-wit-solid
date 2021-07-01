@@ -1,0 +1,21 @@
+:host{
+    width: 100%;
+}
+
+button{
+    position: relative;
+    mat-icon{
+        position: absolute;
+        font-size: 15px;
+        transition: all ease-in-out .3s;
+        top: 9px;
+        right: -4px;
+    }
+
+    .trendDown{
+        transform: rotate(
+            180deg
+            );
+            top: 0;
+    }
+}

@@ -1,0 +1,8 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+    <label fxFlex="10">Min Item Price</label>
+    <div fxFlex="90">
+        <span class="limit">{{minLimit}}</span>
+        <mat-slider [min]="minLimit" [max]="maxLimit" step="10" thumbLabel></mat-slider>
+        <span class="limit">{{maxLimit}}</span>
+    </div>
+</div>
