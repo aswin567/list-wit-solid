@@ -10,8 +10,8 @@ export class ListSorterComponent implements OnInit {
 
   @Output() onSort: EventEmitter<ListSorter> = new EventEmitter<ListSorter>()
 
-  sortByPrice: ListSorter = { key: 'brand', isActive: false };
-  sortByBrand: ListSorter = { key: 'price', isActive: false };
+  sortByPrice: ListSorter = { key: 'price', isActive: false };
+  sortByBrand: ListSorter = { key: 'brand', isActive: false };
 
   constructor() {
   }

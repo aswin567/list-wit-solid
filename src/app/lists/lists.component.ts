@@ -9,8 +9,9 @@ import { ListService } from './list.service';
   templateUrl: './lists.component.html',
   styleUrls: ['./lists.component.scss']
 })
-export class ListsComponent{
+export class ListsComponent {
   lists: Array<Item> = [];
+  masterList: Array<Item> = [];
   maxPrice!: number;
   minPrice!: number;
 
@@ -18,22 +19,31 @@ export class ListsComponent{
     this.getListData();
   }
 
-  getListData(){
+  getListData() {
     this.appService.getList().subscribe((itemList: Array<Item>) => {
-     this.lists = this.listService.sortList('price', itemList, true);
-     this.maxPrice = this.lists [0].price;
-     this.minPrice = this.lists [this.lists.length-1].price;
+      this.masterList = this.listService.sortList('price', itemList, false);
+      this.lists = JSON.parse(JSON.stringify(this.masterList));
+      this.minPrice = this.masterList.length>0 ?this.masterList[0].price: 0;
+      this.maxPrice = this.masterList.length>0 ?this.masterList[this.masterList.length - 1].price: 0;
     },
       (error) => { throw error });
   }
 
-  sortList(sortingConfig: ListSorter){
-    const localList = this.lists;
+  sortList(sortingConfig: ListSorter) {
+    const copyList = this.lists;
     this.lists = [];
-    setTimeout(()=>{
-      this.lists = this.listService.sortList(sortingConfig.key, localList, sortingConfig.trend === 'down'? true: false )
+    setTimeout(() => {
+      this.lists = this.listService.sortList(sortingConfig.key, copyList, sortingConfig.trend === 'down' ? true : false)
     }, 0)
-    
+
   }
 
+  onFilterList(updatedValue: number) {
+
+    this.lists = [];
+    setTimeout(() => {
+      this.lists = this.listService.filterList('price', this.masterList, updatedValue)
+    }, 0);
+
+  }
 }

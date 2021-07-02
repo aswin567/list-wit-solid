@@ -1,8 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="start center">
-    <label fxFlex="10">Min Item Price</label>
+    <label fxFlex="10">Price</label>
     <div fxFlex="90">
         <span class="limit">{{minLimit}}</span>
-        <mat-slider [min]="minLimit" [max]="maxLimit" step="10" thumbLabel></mat-slider>
+        <mat-slider [min]="minLimit" [max]="maxLimit" step="1000" thumbLabel (change)="onFilterValueChange($event)" [displayWith]="formatLabel"></mat-slider>
         <span class="limit">{{maxLimit}}</span>
     </div>
 </div>

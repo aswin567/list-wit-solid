@@ -10,7 +10,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
-const MaterialModules = [MatButtonModule, MatIconModule, MatToolbarModule, ScrollingModule, MatCardModule, MatChipsModule, MatSliderModule];
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+const MaterialModules = [MatProgressSpinnerModule, MatButtonModule, MatIconModule, MatToolbarModule, ScrollingModule, MatCardModule, MatChipsModule, MatSliderModule];
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

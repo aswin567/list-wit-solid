@@ -28,6 +28,17 @@ export class ListService {
     return sortedList;
   }
 
+  filterList(key: 'price', listArray: Array<Item>, thresholdValue: number){
+    const filterdArray: Array<Item> = []
+    listArray.forEach((item:Item, index: number)=>{
+      if(item[key] > thresholdValue){
+        filterdArray.push(item)
+      }
+    });
+
+    return filterdArray;
+  }
+
   private onCheckCompareValue(value: string | number) {
     if (typeof value === 'string') {
       return value.toLowerCase();
